@@ -68,18 +68,25 @@ def set_ddns(myhost, myuser, mypass, host_ip):
 
 
 
-#MAIN section
+def main():
+  #MAIN section
 
-#Get the TCP/IP address currently associated with this machine (assumes there is only one)
-host_ip = get_host_name_ip() 
+  #Get the TCP/IP address currently associated with this machine (assumes there is only one)
+  host_ip = get_host_name_ip() 
 
-#Read config settings for DNS host record to update and google domains username and password to authenticate for the google domains sythentic record from the duc.conf file.
-myhost, myuser, mypass = get_conf() 
+  #Read config settings for DNS host record to update and google domains username and password to authenticate for the google domains sythentic record from the duc.conf file.
+  myhost, myuser, mypass = get_conf() 
 
-#Attempt to set the DDNS IP address value in google domains using Google's DDNS API interface over HTTPS.
-myresults=set_ddns(myhost.strip('"'), myuser.strip('"'), mypass.strip('"'), host_ip.strip('"')) 
+  #Attempt to set the DDNS IP address value in google domains using Google's DDNS API interface over HTTPS.
+  myresults=set_ddns(myhost.strip('"'), myuser.strip('"'), mypass.strip('"'), host_ip.strip('"')) 
 
-print(f'We have made it to the end: myhost: {myhost} myuser: {myuser} mypass: {mypass}')
-print(f'result:      {myresults[0]}')
-print(f'result.url:  {myresults[1]}')
-print(f'result.text: {myresults[2]}')
+  print(f'We have made it to the end: myhost: {myhost} myuser: {myuser} mypass: {mypass}')
+  print(f'result:      {myresults[0]}')
+  print(f'result.url:  {myresults[1]}')
+  print(f'result.text: {myresults[2]}')
+
+
+if __name__ == '__main__':
+  main()
+
+ 
