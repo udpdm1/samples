@@ -1,5 +1,6 @@
 '''
 Code sample borrowed from web to understand regressive functions.
+See original article: https://python-with-science.readthedocs.io/en/latest/koch_fractal/koch_fractal.html
 '''
 # Draw a Koch snowflake
 from turtle import *
